@@ -6481,3 +6481,27 @@
   src\Auth.php:1064                                  Glpi\Event::log()
   front\login.php:94                                 Auth->login()
   {"user":"@LAPTOP-3QJ309BV"} 
+[2024-06-04 03:16:09] glpisqllog.ERROR: DBmysql::doQuery() in D:\Data Aplikasi\xampp php 8.0.2\htdocs\merging-manual\halobps-rebase\src\DBmysql.php line 403
+  *** MySQL query error:
+  SQL: INSERT INTO `glpi_crontasklogs` (`crontasks_id`, `date`, `content`, `crontasklogs_id`, `state`, `volume`, `elapsed`) VALUES ('15', '2024-06-04 03:16:08', 'Run mode: GLPI', '0', '0', '0', '0')
+  Error: Duplicate entry '0' for key 'PRIMARY'
+  Backtrace :
+  src\DBmysql.php:1381                               DBmysql->doQuery()
+  src\CommonDBTM.php:729                             DBmysql->insert()
+  src\CommonDBTM.php:1342                            CommonDBTM->addToDB()
+  src\CronTask.php:261                               CommonDBTM->add()
+  src\CronTask.php:1015                              CronTask->start()
+  front\cron.php:67                                  CronTask::launch()
+  {"user":"@LAPTOP-3QJ309BV"} 
+[2024-06-04 03:16:10] glpisqllog.ERROR: DBmysql::doQuery() in D:\Data Aplikasi\xampp php 8.0.2\htdocs\merging-manual\halobps-rebase\src\DBmysql.php line 403
+  *** MySQL query error:
+  SQL: INSERT INTO `glpi_crontasklogs` (`crontasks_id`, `date`, `content`, `crontasklogs_id`, `state`, `volume`, `elapsed`) VALUES ('15', '2024-06-04 03:16:08', 'Action completed, no processing required', '0', '2', '0', '1.0596840381622')
+  Error: Duplicate entry '0' for key 'PRIMARY'
+  Backtrace :
+  src\DBmysql.php:1381                               DBmysql->doQuery()
+  src\CommonDBTM.php:729                             DBmysql->insert()
+  src\CommonDBTM.php:1342                            CommonDBTM->addToDB()
+  src\CronTask.php:351                               CommonDBTM->add()
+  src\CronTask.php:1049                              CronTask->end()
+  front\cron.php:67                                  CronTask::launch()
+  {"user":"@LAPTOP-3QJ309BV","mem_usage":"0.679\", 19.67Mio)"} 
